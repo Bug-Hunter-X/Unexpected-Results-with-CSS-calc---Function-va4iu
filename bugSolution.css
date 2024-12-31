@@ -1,0 +1,14 @@
+To solve this issue, ensure that the parent element's width is defined before using it in the `calc()` calculation. For example, you can set the parent's width explicitly or use a different approach to ensure that the calculation is performed correctly.  Additionally, use appropriate units (e.g., percentages, pixels, ems, rems) to avoid unexpected behavior. If you are working with dynamic sizes, consider using JavaScript to adjust the CSS after the parent element's width is known.
+
+Here's an example of how to fix the issue:
+```css
+/* bugSolution.css */
+#parent {
+  width: 500px; /* Explicit width for the parent */
+}
+
+#child {
+  width: calc(50% - 20px); /* Calculation using explicit parent width */
+}
+```
+This ensures that the calculation is performed correctly, using a defined parent element width and clear units.
